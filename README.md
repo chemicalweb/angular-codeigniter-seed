@@ -2,7 +2,7 @@ angular-codeigniter-seed
 ========================
 
 ## Setup:
-Compared to the original I have made changes to Common.php, config.php, incorporated more upto date Angular and restructured Angular to be more component based and use controllerAs syntax.
+Compared to the original I have made changes to Common.php, config.php, incorporated more upto date Angular and restructured Angular to  use controllerAs syntax.
 
 ### mysql
 - create database
