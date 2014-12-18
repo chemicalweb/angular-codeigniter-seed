@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('acs.filters', []);
+angular.module('acs');

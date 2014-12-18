@@ -7,23 +7,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">AC Seed</a>
+            <a class="navbar-brand" href="/">AC Seed</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li data-ng-class="{ active: active('/home')}">
+                <li data-ng-class="{ active: nav.active('/home')}">
                     <a href="#/home">Home</a>
                 </li>
-                <li data-ng-hide="user.token" data-ng-class="{ active: active('/login')}">
+                <li data-ng-hide="user.token" data-ng-class="{ active: nav.active('/login')}">
                     <a href="#/login">Login</a>
                 </li>
-                <li data-ng-hide="user.token" data-ng-class="{ active: active('/register')}">
+                <li data-ng-hide="user.token" data-ng-class="{ active: nav.active('/register')}">
                     <a href="#/register">Register</a>
                 </li>
                 <li data-ng-show="user.token">
-                    <a href data-ng-click="logout()">Logout</a>
+                    <a href data-ng-click="nav.logout()">Logout</a>
                 </li>
-                <li data-ng-class="{ active: active('/about')}">
+                <li data-ng-class="{ active: nav.active('/about')}">
                     <a href="#/about">About</a>
                 </li>
                 <li class="dropdown">

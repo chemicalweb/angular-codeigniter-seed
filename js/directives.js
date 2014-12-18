@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('acs.directives', []);
+angular.module('acs');

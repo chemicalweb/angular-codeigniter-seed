@@ -1,51 +1,53 @@
 'use strict';
 
-var controllers = angular.module('acs.controllers', []);
+angular.module('acs')
 
-controllers.controller('navigation', ['$scope', '$location', 'auth', function($scope, $location, auth) {
+.controller('NavigationCtrl', ['$location', 'auth', function($location, auth) {
 
-    $scope.user = auth.user;
+    this.user = auth.user;
 
-    $scope.active = function(path) {
+    this.active = function(path) {
         return path === $location.path();
     };
 
-    $scope.logout = function() {
-        $scope.user = {};
+    this.logout = function() {
+        this.user = {};
         $location.path('home');
     };
 
-}]);
+}])
 
-controllers.controller('login', ['$scope', '$location', '$http', 'auth', function($scope, $location, $http, auth) {
+.controller('LoginCtrl', ['$location', '$http', 'auth', function($location, $http, auth) {
+    var self = this;
 
-    $scope.input = {};
+    this.input = {};
 
-    $scope.login = function() {
+    this.login = function() {
         $http.post('api/account/login', {
-            email: $scope.input.email,
-            password: $scope.input.password
+            email: self.input.email,
+            password: self.input.password
         }).success(function(data) {
             if (data.status) {
-                $scope.user = auth.user;
-                $scope.user.email = data.email;
-                $scope.user.token = data.token;
+                self.user = auth.user;
+                self.user.email = data.email;
+                self.user.token = data.token;
                 $location.path('home');
             } else {
             }
         });
     };
 
-}]);
+}])
 
-controllers.controller('register', ['$scope', '$location', '$http', function($scope, $location, $http) {
+.controller('RegisterCtrl', ['$location', '$http', function($location, $http) {
+    var self = this;
 
-    $scope.input = {};
+    this.input = {};
 
-    $scope.register = function() {
+    this.register = function() {
         $http.post('api/account/register', {
-            email: $scope.input.email,
-            password: $scope.input.password
+            email: self.input.email,
+            password: self.input.password
         }).success(function(data) {
             if (data.status) {
                 $location.path('login');
@@ -54,15 +56,16 @@ controllers.controller('register', ['$scope', '$location', '$http', function($sc
         });
     };
 
-}]);
+}])
 
-controllers.controller('home', ['$scope', '$location', '$http', 'auth', function($scope, $location, $http, auth) {
+.controller('HomeCtrl', ['$location', '$http', 'auth', function($location, $http, auth) {
+    var self = this;
 
-    $scope.user = auth.user;
+    this.user = auth.user;
 
-    $scope.information = function() {
+    this.information = function() {
         $http.post('api/account/information', {
-            token: $scope.user.token
+            token: self.user.token
         }).success(function(data) {
             if (data.status) {
                 alert(data.message);
@@ -71,11 +74,11 @@ controllers.controller('home', ['$scope', '$location', '$http', 'auth', function
         });
     };
 
-}]);
+}])
 
 
-controllers.controller('about', ['$scope', function($scope) {
+.controller('AboutCtrl', function() {
 
-    $scope.content = 'This is some content';
+    this.content = 'This is some content';
 
-}]);
+});

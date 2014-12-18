@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('acs.services', []).
-factory('auth', function() {
+angular.module('acs')
+
+.factory('auth', function() {
     var user = {};
     return {
         user: function() {
