@@ -2,11 +2,7 @@
 
 angular.module('acs')
 
-.factory('auth', function() {
+.factory('User', function() {
     var user = {};
-    return {
-        user: function() {
-            return user;
-        }
-    };
+    return user;
 });

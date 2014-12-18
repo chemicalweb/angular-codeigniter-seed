@@ -7,7 +7,7 @@ angular.module('acs', ['ngRoute', 'ui.bootstrap'])
     $routeProvider
         .when('/home', {
             controller: 'HomeCtrl',
-            controlelrAs: 'home',
+            controllerAs: 'home',
             templateUrl: 'partials/home.html'
         })
         .when('/about', {

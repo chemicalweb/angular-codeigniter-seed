@@ -2,9 +2,9 @@
 
 angular.module('acs')
 
-.controller('NavigationCtrl', ['$location', 'auth', function($location, auth) {
+.controller('NavigationCtrl', ['$location', 'User', function($location, User) {
 
-    this.user = auth.user;
+    this.user = User;
 
     this.active = function(path) {
         return path === $location.path();
@@ -17,7 +17,7 @@ angular.module('acs')
 
 }])
 
-.controller('LoginCtrl', ['$location', '$http', 'auth', function($location, $http, auth) {
+.controller('LoginCtrl', ['$location', '$http', 'User', function($location, $http, User) {
     var self = this;
 
     this.input = {};
@@ -28,7 +28,7 @@ angular.module('acs')
             password: self.input.password
         }).success(function(data) {
             if (data.status) {
-                self.user = auth.user;
+                self.user = User;
                 self.user.email = data.email;
                 self.user.token = data.token;
                 $location.path('home');
@@ -58,10 +58,10 @@ angular.module('acs')
 
 }])
 
-.controller('HomeCtrl', ['$location', '$http', 'auth', function($location, $http, auth) {
+.controller('HomeCtrl', ['$location', '$http', 'User', function($location, $http, User) {
     var self = this;
 
-    this.user = auth.user;
+    this.user = User;
 
     this.information = function() {
         $http.post('api/account/information', {
