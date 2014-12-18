@@ -1,24 +1,10 @@
 angular-codeigniter-seed
 ========================
 
-#Current things required to setup:
+## Setup:
+Compared to the original I have made changes to Common.php, config.php, incorporated more upto date Angular and restructured Angular to be more component based and use controllerAs syntax.
 
-Common.php (edit line 257)
-     berfore:
-          return $_config[0] =& $config;
-     after: 
-          $_config[0] =& $config;
-          return $_config[0];
-* fixes error due to using latest version of PHP since CI is old...
-
-config.php
-     $config['index_page'] = 'index.html';
-
-database.php
-configure:
-     ‘hostname’, ‘username’, ‘password’, ‘database’, ‘dbdriver'
-
-mysql
+### mysql
 - create database
 - create table ‘accounts'
 - create 3 rows
@@ -26,5 +12,6 @@ mysql
      ‘email’ - varchar - 255
      ‘password’ - varchar - 255
 
-angular-controllers
-- create ‘about’ controller
+### database.php
+*configure:*
+     ‘hostname’, ‘username’, ‘password’, ‘database’, ‘dbdriver'

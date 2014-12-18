@@ -9,7 +9,7 @@ controllers.controller('navigation', ['$scope', '$location', 'auth', function($s
     $scope.active = function(path) {
         return path === $location.path();
     };
-    
+
     $scope.logout = function() {
         $scope.user = {};
         $location.path('home');
@@ -59,7 +59,7 @@ controllers.controller('register', ['$scope', '$location', '$http', function($sc
 controllers.controller('home', ['$scope', '$location', '$http', 'auth', function($scope, $location, $http, auth) {
 
     $scope.user = auth.user;
-    
+
     $scope.information = function() {
         $http.post('api/account/information', {
             token: $scope.user.token
@@ -70,5 +70,12 @@ controllers.controller('home', ['$scope', '$location', '$http', 'auth', function
             }
         });
     };
+
+}]);
+
+
+controllers.controller('about', ['$scope', function($scope) {
+
+    $scope.content = 'This is some content';
 
 }]);
