@@ -8,34 +8,42 @@
     <meta name="author" content="">
     <title>AngularJS CodeIgniter Seed</title>
 
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Bootstrap Material Design -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.1.5/css/material.min.css">
+    <!-- Font Awesome -->
     <!-- <link rel="stylesheet" href="css/libs/font-awesome/css/font-awesome.min.css"> -->
+    <!-- Animate CSS -->
     <!-- <link rel="stylesheet" href="css/libs/animate.css"> -->
+    <!-- Custom CSS -->
     <link href="css/application.css" rel="stylesheet">
 
 </head>
 <body>
 
-
+    <!-- Navigation -->
     <div data-ng-controller="NavigationCtrl as nav" data-ng-include="'partials/navigation.html'"></div>
-    <div class="container">
-        <div data-ng-view></div>
-    </div>
 
+    <!-- Views -->
+    <div data-ng-view></div>
 
-
+    <!-- SCRIPTS -->
+    <!-- Jquery -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Angular -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-touch.js"></script>
+    <!-- Angular UI -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.min.js"></script>
+    <!-- Application -->
     <script src="js/application.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/directives.js"></script>
-</body>
 
+</body>
 </html>
